@@ -1,0 +1,32 @@
+<app-header></app-header>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  body {font-family: "Times New Roman", Georgia, Serif;}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+  }
+  </style>
+
+<div class="w3-row w3-padding-64" id="menu">
+  <div class="w3-col l6 w3-padding-large">
+    <h1 class="w3-center">Authors</h1><br>
+   <div *ngFor='let author of authors'>
+    <h1>{{author.poet}}</h1>
+    <h2>{{author.works}}</h2>  
+       <h3 class="w3-text-grey">{{author.description}}</h3><br>
+      <!-- </div> -->
+  
+  <!-- <div class="w3-col l6 w3-padding-large"> -->
+    <img src="{{author.image}}" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+  <!-- </div> -->
+  <!-- <div class="w3-col l6 w3-padding-large"> -->
+    <a routerLink="" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">Readmore</a>
+    <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editAuthor(author)" style="margin-left: 20px;"> Edit</button>
+                    <button class="btn btn-danger" style="cursor:pointer" *ngIf="_auth.loggedIn()"(click)="deleteAuthor(author)"> Delete</button>
+  </div>
+</div>
+</div>
+<hr>
+
